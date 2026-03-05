@@ -2410,7 +2410,7 @@ document.getElementById("customFocus").addEventListener("change", e=>{
 
 updateFocusUI();
 /* =====================================================
-   FOCUS DATA STORAGE
+   DATA STORAGE ON THE EMPHASIS OF DATA STRUCTURES
 ===================================================== */
 function saveFocusSession(){
   const today = new Date().toDateString();
@@ -2462,9 +2462,7 @@ function drawFocusChart(){
 }
 
 drawFocusChart();
-/* =====================================================
-   STUDY TIMETABLE LOGIC
-===================================================== */
+
 const DAYS = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 const XP_PER_SLOT = 15;
 const XP_PENALTY = 10;
@@ -2475,7 +2473,7 @@ let timetableLocked = JSON.parse(localStorage.getItem("timetableLocked")) || fal
 const grid = document.getElementById("timetableGrid");
 const editBtn = document.getElementById("editTimetableBtn");
 
-/* INIT */
+
 function initTimetable(){
   grid.innerHTML = "";
 
@@ -2507,7 +2505,6 @@ function initTimetable(){
   });
 }
 
-/* MARK DONE / MISSED */
 function markSlot(day,index,el){
   const slot = timetable[day][index];
   if(!slot.text) return;
@@ -2846,4 +2843,5 @@ function savePlaylist(){
 
 </body>
 </html>
+
 
